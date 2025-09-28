@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="profile-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar left">
+            <nav class="menu">
+                <a href="home.html" class="menu-item"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="messages.html" class="menu-item"><i class="fa-regular fa-comment-dots"></i> Messages</a>
+                <a class="menu-item" id="upload-btn"><i class="fas fa-plus-square"></i> Upload Post</a>
+                <a href="profile.html" class="menu-item"><i class="fa-regular fa-user"></i> Profile</a>
+                <a href="saved.html" class="menu-item"><i class="fa-regular fa-bookmark"></i> Saved</a>
+                <a href="settings.html" class="menu-item"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="#" class="menu-item" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Profile Content -->
+        <div class="profile-container">
+            <main class="profile-card">
+                <div>
+                    <div class="profile-card-header-content">
+                        <div class="profile-picture-wrapper">
+                            <img src="https://i.pravatar.cc/150?u=default" alt="User Profile Picture" class="profile-picture">
+                        </div>
+                        <div class="profile-info">
+                            <h1 class="user-name">Loading...</h1>
+                            <p class="user-email">loading@example.com</p>
+                            <div class="bio-wrapper">
+                                <p class="user-bio">Loading bio...</p>
+                            </div>
+                            <div id="profile-action-area" class="profile-action-area">
+                                <!-- JS will insert Follow/Unfollow button here -->
+                                <button id="follow-btn" class="btn-follow follow" style="display: none;">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div class="stat" data-tab="posts">
+                            <span class="stat-number posts">0</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                        <div class="stat" data-tab="followers">
+                            <span class="stat-number followers">0</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat" data-tab="following">
+                            <span class="stat-number following">0</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+
+                    <nav class="profile-tabs">
+                        <a href="#" class="tab active" data-tab="posts">Posts</a>
+                        <a href="#" class="tab" data-tab="followers">Followers</a>
+                        <a href="#" class="tab" data-tab="following">Following</a>
+                    </nav>
+                </div>
+            </main>
+
+            <section class="post-grid">
+                <p>Loading posts...</p>
+            </section>
+            <section class="user-list-container" style="display: none;">
+                <!-- Follower/Following lists will be rendered here -->
+            </section>
+        </div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/fanProfile.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <!-- Top Navbar -->
+    <header class="top-nav">
+        <div class="logo">Connect</div>
+        <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search Connect...">
+            <div class="search-results-container" id="search-results">
+                <!-- Search results will be dynamically inserted here -->
+            </div>
+        </div>
+        <div class="nav-icons">
+            <a class="icon-link" id="notifications-icon"><i class="fas fa-bell"></i></a>
+            <div id="notifications-panel">
+                <div class="notification-item">
+                    <img src="https://i.pravatar.cc/30?img=12" class="avatar-sm">
+                    <p><strong>sara_w</strong> started following you.</p>
+                </div>
+                <div class="notification-item">
+                    <img src="https://i.pravatar.cc/30?img=20" class="avatar-sm">
+                    <p><strong>mike_p</strong> liked your post.</p>
+                </div>
+                <div class="notification-item">
+                    <img src="https://i.pravatar.cc/30?img=5" class="avatar-sm">
+                    <p><strong>jane_smith</strong> commented on your post.</p>
+                </div>
+            </div>
+            <a class="icon-link" data-page="profile"><i class="fas fa-user"></i></a>
+            <a href="#" class="icon-link" id="logout-btn"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </header>
+
+    <main class="layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar left">
+            <nav class="menu">
+                <a href="home.html" class="menu-item active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="messages.html" class="menu-item"><i class="fa-regular fa-comment-dots"></i> Messages</a>
+                <a class="menu-item" id="upload-btn"><i class="fas fa-plus-square"></i> Upload Post</a>
+                <a href="profile.html" class="menu-item"><i class="fa-regular fa-user"></i> Profile</a>
+                <a href="saved.html" class="menu-item"><i class="fa-regular fa-bookmark"></i> Saved</a>
+                <a href="settings.html" class="menu-item"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div id="main-content">
+            <!-- Home Feed Page -->
+            <section id="home-page" class="feed page-section active">
+                <!-- Post Card 1 -->
+                <div class="post-card" data-post-id="1">
+                    <div class="post-header">
+                        <a href="#" class="profile-link" data-page="profile">
+                            <img src="https://i.pravatar.cc/40?img=3" class="avatar-sm">
+                            <div>
+                                <span class="post-user">alex_doe</span>
+                                <span class="time">· 2 hours ago</span>
+                            </div>
+                        </a>
+                        <button class="more-btn"><i class="fas fa-ellipsis-h"></i></button>
+                        <div class="post-options-dropdown">
+                            <button class="save-post-btn"><i class="fas fa-bookmark"></i> Save Post</button>
+                            <button><i class="fas fa-flag"></i> Report</button>
+                        </div>
+                    </div>
+                    <p class="post-text">
+                        Exploring the beautiful cityscapes today! So much history and architecture to admire.
+                        Can’t wait to share more photos from this amazing trip. #travel #citylife #architecture
+                    </p>
+                    <img src="https://picsum.photos/600/400?random=1" class="post-image" alt="post">
+                    <div class="post-actions">
+                        <button class="action-btn like"><i class="fas fa-heart"></i> <span
+                                class="like-count">128</span></button>
+                        <button class="action-btn comment"><i class="fas fa-comment"></i> <span>12</span></button> 
+                        <button class="action-btn comment"><i class="fas fa-comment"></i> <span>12</span></button>
+                        <button class="action-btn share"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+
+                <!-- Post Card 2 -->
+                <div class="post-card" data-post-id="2">
+                    <div class="post-header">
+                        <a href="#" class="profile-link" data-page="profile">
+                            <img src="https://i.pravatar.cc/40?img=5" class="avatar-sm">
+                            <div>
+                                <span class="post-user">jane_smith</span>
+                                <span class="time">· 5 hours ago</span>
+                            </div>
+                        </a>
+                        <button class="more-btn"><i class="fas fa-ellipsis-h"></i></button>
+                        <div class="post-options-dropdown">
+                            <button class="save-post-btn"><i class="fas fa-bookmark"></i> Save Post</button>
+                            <button><i class="fas fa-flag"></i> Report</button>
+                        </div>
+                    </div>
+                    <p class="post-text">
+                        Just finished a marathon of my favorite show and I have so many thoughts!
+                        The character development was incredible this season...
+                    </p>
+                    <div class="post-actions">
+                        <button class="action-btn like"><i class="fas fa-heart"></i> <span
+                                class="like-count">42</span></button>
+                        <button class="action-btn comment"><i class="fas fa-comment"></i> <span>5</span></button>
+                        <button class="action-btn share"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar right">
+            <div class="card">
+                <h3>People you may know</h3>
+                <div class="suggestion">
+                    <img src="https://i.pravatar.cc/40?img=12" class="avatar-sm">
+                    <div class="suggestion-user">
+                        <strong>sara_w</strong>
+                        <span>Suggested for you</span>
+                    </div>
+                    <button class="btn follow">Follow</button>
+                </div>
+                <div class="suggestion">
+                    <img src="https://i.pravatar.cc/40?img=20" class="avatar-sm">
+                    <div class="suggestion-user">
+                        <strong>mike_p</strong>
+                        <span>Followed by jane_smith</span>
+                    </div>
+                    <button class="btn follow">Follow</button>
+                </div>
+                <div class="suggestion">
+                    <img src="https://i.pravatar.cc/40?img=25" class="avatar-sm">
+                    <div class="suggestion-user">
+                        <strong>chris_j</strong>
+                        <span>Suggested for you</span>
+                    </div>
+                    <button class="btn follow">Follow</button>
+                </div>
+            </div>
+            <div class="card trending">
+                <h3>Trending Topics</h3>
+                <ul>
+                    <li>#AIRevolution <span>1.2M Posts</span></li>
+                    <li>#WorldCupFinal <span>890k Posts</span></li>
+                    <li>#NewMusicFriday <span>650k Posts</span></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Comment Modal -->
+   <div id="comment-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Comments</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div id="comment-list">
+                <!-- Comments will be loaded here -->
+            </div>
+            <form id="comment-form">
+                <textarea placeholder="Write a comment..." required></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Upload Post Modal -->
+    <div id="upload-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create a new post</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="upload-form">
+                <textarea id="post-content" maxlength="280" placeholder="What's on your mind?" required></textarea>
+                <input type="file" id="post-image" accept="image/*">
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

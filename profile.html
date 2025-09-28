@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan - Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="profile-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar left">
+            <nav class="menu">
+                <a href="home.html" class="menu-item"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="messages.html" class="menu-item"><i class="fa-regular fa-comment-dots"></i> Messages</a>
+                <a class="menu-item" id="upload-btn"><i class="fas fa-plus-square"></i> Upload Post</a> <a
+                    href="profile.html" class="menu-item active"><i class="fa-regular fa-user"></i> Profile</a> <a
+                    href="saved.html" class="menu-item"><i class="fa-regular fa-bookmark"></i> Saved</a> <a
+                    href="settings.html" class="menu-item"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="#" class="menu-item" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Profile Content -->
+        <div class="profile-container">
+
+            <main class="profile-card">
+                <div>
+                <div class="profile-card-header-content">
+                    <div class="profile-picture-wrapper">
+                        <img src="https://i.pravatar.cc/150?u=default" alt="User Profile Picture" class="profile-picture">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="user-name">Loading...</h1>
+                        <p class="user-email">loading@example.com</p> 
+                        <div class="bio-wrapper">
+                            <p class="user-bio">Loading bio...</p>
+                        </div>
+                        <div id="profile-action-area" class="profile-action-area">
+                            <button id="edit-profile-btn" class="btn-edit-profile" style="display: none;"><i class="fas fa-pen"></i> Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat" data-tab="posts">
+                        <span class="stat-number posts">0</span>
+                        <span class="stat-label">Posts</span>
+                    </div>
+                    <div class="stat" data-tab="followers">
+                        <span class="stat-number followers">0</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat" data-tab="following">
+                        <span class="stat-number following">0</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                </div>
+
+                <nav class="profile-tabs">
+                    <a href="#" class="tab active" data-tab="posts">Posts</a> <a href="#" class="tab" data-tab="followers">Followers</a> <a href="#" class="tab" data-tab="following">Following</a>
+                </nav>
+                </div>
+            </main>
+            
+            <section class="post-grid">
+                <p>Loading posts...</p>
+            </section>
+            <section class="user-list-container" style="display: none;">
+                <!-- Follower/Following lists will be rendered here -->
+            </section>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Your Profile</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="edit-profile-form">
+                <div class="upload-group">
+                    <label for="edit-profile-pic-input" class="profile-pic-placeholder" id="edit-profile-pic-label">
+                        <img id="edit-profile-pic-preview" src="https://i.pravatar.cc/100?u=default" alt="Profile Preview">
+                    </label>
+                    <input type="file" id="edit-profile-pic-input" accept="image/*" style="display:none;">
+                    <span>Change Photo</span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-username">Username</label>
+                    <input type="text" id="edit-username" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-bio">Bio</label>
+                    <textarea id="edit-bio" class="form-input" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-save-changes">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="upload-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create a new post</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="upload-form">
+                <textarea id="post-content" maxlength="280" placeholder="What's on your mind?" required></textarea>
+                <input type="file" id="post-image" accept="image/*">
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+
+</html>
