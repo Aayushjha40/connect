@@ -186,36 +186,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            const newPost = {
-                id: 'post_' + Date.now(),
-                authorId: db.currentUser,
-                content: content,
-                image: null, // Will be set by file reader if present
-                timestamp: new Date().toISOString(),
-                likes: [],
-                comments: []
-            };
-
-            // Handle file upload
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    newPost.image = event.target.result; // Set the image to the base64 string
-                    db.posts.unshift(newPost);
-                    writeAndRefresh(db);
-                    uploadForm.reset();
-                    uploadModal.classList.remove('active');
+            function savePost(imageData) {
+                const newPost = {
+                    id: 'post_' + Date.now(),
+                    authorId: db.currentUser,
+                    content: content,
+                    image: imageData || null,
+                    timestamp: new Date().toISOString(),
+                    likes: [],
+                    comments: []
                 };
-                reader.onerror = function() {
-                    alert('Failed to read file.');
-                };
-                reader.readAsDataURL(file);
-            } else {
-                // If no file, save post directly
                 db.posts.unshift(newPost);
                 writeAndRefresh(db);
                 uploadForm.reset();
                 uploadModal.classList.remove('active');
+            }
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    savePost(event.target.result);
+                };
+                reader.onerror = function() {
+                    alert('Failed to read file.');
+                    savePost(null);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                savePost(null);
             }
         });
     }
